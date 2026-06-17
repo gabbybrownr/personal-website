@@ -1,0 +1,43 @@
+name: Quality Checks
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate-site:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify required files
+        run: |
+          test -f index.html
+          test -f styles.css
+          test -f script.js
+
+      - name: Validate HTML
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+        with:
+          root: .
+          css: false
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --verbose
+            --accept 200,206,429
+            --exclude-mail
+            --exclude "https://www.instagram.com"
+            --exclude "https://www.tiktok.com"
+            --exclude "https://www.youtube.com"
+            --exclude "https://linktr.ee"
+            "./index.html" "./README.md"
+          fail: true
