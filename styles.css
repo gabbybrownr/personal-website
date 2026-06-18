@@ -196,6 +196,37 @@ main {
   align-items: stretch;
 }
 
+.hero-image {
+  grid-column: 1 / -1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--pink-200);
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.9), rgba(252, 224, 236, 0.8));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  position: relative;
+}
+
+.gabby-photo {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-lg);
+}
+
+.image-placeholder {
+  position: absolute;
+  color: var(--pink-400);
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  padding: 20px;
+}
+
 .kicker {
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -740,6 +771,19 @@ h1 .title {
 @media (max-width: 980px) {
   .hero {
     grid-template-columns: 1fr;
+  }
+
+  .hero-image {
+    order: 1;
+    min-height: 280px;
+  }
+
+  .hero-copy {
+    order: 0;
+  }
+
+  .hero-card {
+    order: 2;
   }
 
   .story {
