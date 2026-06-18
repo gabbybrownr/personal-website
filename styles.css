@@ -227,6 +227,44 @@ main {
   padding: 20px;
 }
 
+.gender-split {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gender-bar-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.gender-female {
+  color: var(--pink-500, #d63384);
+}
+
+.gender-male {
+  color: #7a8fa6;
+}
+
+.gender-bar {
+  display: flex;
+  height: 8px;
+  border-radius: 99px;
+  overflow: hidden;
+  background: var(--pink-100);
+}
+
+.gender-bar-female {
+  background: var(--pink-400, #e7849b);
+  border-radius: 99px 0 0 99px;
+}
+
+.gender-bar-male {
+  background: #a8c0d6;
+  border-radius: 0 99px 99px 0;
+}
+
 .hero-about {
   grid-column: 1 / -1;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(252, 224, 236, 0.7));
