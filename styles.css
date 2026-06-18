@@ -696,6 +696,13 @@ h1 .title {
   font-size: 0.84rem;
 }
 
+.metric-sub-male {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #6a9abf;
+  margin-top: 2px;
+}
+
 .connect-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
