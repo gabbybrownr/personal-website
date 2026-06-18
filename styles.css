@@ -227,6 +227,25 @@ main {
   padding: 20px;
 }
 
+.hero-about {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(252, 224, 236, 0.7));
+  border: 1px solid var(--pink-200);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+}
+
+.hero-about .card-label {
+  margin-bottom: 10px;
+}
+
+.about-bio {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink);
+  max-width: 680px;
+}
+
 .kicker {
   text-transform: uppercase;
   letter-spacing: 0.12em;
