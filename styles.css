@@ -205,16 +205,18 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 320px;
+  min-height: 0;
   position: relative;
 }
 
 .gabby-photo {
-  width: 100%;
+  display: block;
+  width: min(100%, 820px);
+  max-width: 100%;
   height: auto;
-  max-height: 500px;
-  object-fit: cover;
-  object-position: center top;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
   border-radius: var(--radius-lg);
 }
 
@@ -814,7 +816,7 @@ h1 .title {
 
   .hero-image {
     order: 1;
-    min-height: 280px;
+    min-height: 0;
   }
 
   .hero-copy {
