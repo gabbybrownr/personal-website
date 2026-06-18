@@ -222,7 +222,7 @@ main {
   gap: 10px;
   align-items: center;
   justify-content: center;
-  max-width: 280px;
+  max-width: 440px;
   width: 100%;
   margin: 0 auto;
 }
@@ -252,8 +252,8 @@ main {
 }
 
 .collage-card .gabby-photo {
-  height: clamp(140px, 22vw, 200px) !important;
-  max-height: 200px;
+  height: clamp(300px, 40vw, 420px) !important;
+  max-height: 420px;
 }
 
 .gabby-photo {
@@ -284,11 +284,11 @@ main {
 
 @media (max-width: 760px) {
   .hero-collage-carousel {
-    max-width: 220px;
+    max-width: 320px;
   }
 
   .collage-card .gabby-photo {
-    height: clamp(130px, 38vw, 180px);
+    height: clamp(260px, 70vw, 380px) !important;
   }
 }
 
