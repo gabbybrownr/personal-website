@@ -6,9 +6,10 @@
   --pink-300: #ee9ab4;
   --pink-400: #df6f95;
   --pink-500: #be4f77;
-  --ink-900: #3f2a34;
-  --ink-700: #6a4a59;
-  --ink-500: #8d6c7b;
+  --ink-900: #a13a63;
+  --ink-700: #b5537b;
+  --ink-500: #cd7f9f;
+  --ink: #b5537b;
   --glass: rgba(255, 255, 255, 0.66);
   --line: rgba(232, 170, 194, 0.75);
   --shadow: 0 22px 50px rgba(194, 98, 140, 0.24);
@@ -466,7 +467,7 @@ h1 .title {
 
 .story {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(380px, 1.6fr);
   gap: 12px;
 }
 
@@ -495,6 +496,18 @@ h1 .title {
 
 .text-panel p + p {
   margin-top: 12px;
+}
+
+.signature-panel h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.signature-panel ul {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  color: var(--ink-700);
 }
 
 .section-head {
@@ -808,12 +821,12 @@ h1 .title {
 .metric-sub-male {
   font-size: 0.78rem;
   font-weight: 600;
-  color: #6a9abf;
+  color: var(--pink-400);
   margin-top: 2px;
 }
 
 .metric-male {
-  color: #89bfdf !important;
+  color: var(--pink-300) !important;
 }
 
 .connect-grid {
