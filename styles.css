@@ -209,15 +209,28 @@ main {
   position: relative;
 }
 
+.hero-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 12px;
+}
+
 .gabby-photo {
   display: block;
-  width: min(100%, 480px);
+  width: 100%;
   max-width: 100%;
   height: auto;
   max-height: none;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   border-radius: var(--radius-lg);
+}
+
+@media (max-width: 760px) {
+  .hero-image-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .image-placeholder {
@@ -368,7 +381,7 @@ h1 .title {
 
 .story {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
+  grid-template-columns: 1fr;
   gap: 12px;
 }
 
