@@ -29,7 +29,9 @@ if (sliderTrack && sliderPrev && sliderNext) {
 
   function showSlide(index) {
     activeSlide = (index + slides.length) % slides.length;
-    sliderTrack.style.transform = `translateX(-${activeSlide * 100}%)`;
+    slides.forEach((slide, slideIndex) => {
+      slide.classList.toggle('active', slideIndex === activeSlide);
+    });
     if (sliderCaption) {
       sliderCaption.textContent = slides[activeSlide].dataset.caption || slides[activeSlide].alt;
     }
@@ -41,15 +43,6 @@ if (sliderTrack && sliderPrev && sliderNext) {
 
   sliderNext.addEventListener('click', () => {
     showSlide(activeSlide + 1);
-  });
-
-  window.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowLeft') {
-      showSlide(activeSlide - 1);
-    }
-    if (event.key === 'ArrowRight') {
-      showSlide(activeSlide + 1);
-    }
   });
 
   showSlide(0);

@@ -225,21 +225,30 @@ main {
 }
 
 .hero-slider-track {
-  display: flex;
+  position: relative;
   width: 100%;
-  transition: transform 0.34s ease;
+  height: clamp(360px, 58vw, 700px);
 }
 
 .gabby-photo {
   display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  flex: 0 0 100%;
   max-width: 100%;
-  height: clamp(360px, 58vw, 700px);
+  height: 100%;
   max-height: none;
   object-fit: contain;
   object-position: center;
   border-radius: var(--radius-lg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.26s ease;
+}
+
+.gabby-photo.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .slider-caption {
@@ -277,6 +286,10 @@ main {
   }
 
   .gabby-photo {
+    height: 100%;
+  }
+
+  .hero-slider-track {
     height: clamp(260px, 84vw, 520px);
   }
 
