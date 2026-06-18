@@ -211,7 +211,7 @@ main {
 
 .gabby-photo {
   display: block;
-  width: min(100%, 820px);
+  width: min(100%, 640px);
   max-width: 100%;
   height: auto;
   max-height: none;
