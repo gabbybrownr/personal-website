@@ -936,16 +936,7 @@ li {
   }
 
   .hero-image {
-    order: 1;
     min-height: 0;
-  }
-
-  .hero-copy {
-    order: 0;
-  }
-
-  .hero-card {
-    order: 2;
   }
 
   .metrics {
