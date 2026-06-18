@@ -54,9 +54,17 @@
           <a class="coq-btn coq-btn-ghost" href="https://www.instagram.com/gabbybrownr/" target="_blank" rel="noopener">Visit Instagram</a>
         </div>
       </div>
-      <div class="hero-image hero-image-grid">
-        <img src="images/gabby-garden-pink-floral-dress.jpg" alt="Gabby Brown in a pink floral dress smiling in a garden" class="gabby-photo">
-        <img src="images/gabby-picnic-cake-pink-dress.jpg" alt="Gabby Brown holding a pink birthday cake at a picnic by the water" class="gabby-photo">
+      <div class="hero-image hero-slider" aria-label="Photo gallery of Gabby Brown">
+        <button class="slider-arrow slider-prev" type="button" aria-label="Previous image">&#8592;</button>
+        <div class="hero-slider-viewport">
+          <div class="hero-slider-track">
+            <img src="images/image-1.jpg" alt="Gabby Brown in a pink floral dress smiling in a garden" class="gabby-photo" data-caption="Garden portrait look: pink floral dress with soft romantic styling." loading="eager" decoding="async">
+            <img src="images/image-2.jpg" alt="Gabby Brown holding a pink birthday cake at a picnic by the water" class="gabby-photo" data-caption="Picnic birthday moment: floral details, cake styling, and pastel tablescape." loading="lazy" decoding="async">
+            <img src="images/image-3.jpg" alt="Gabby Brown in a blush floral dress in a romantic outdoor setting" class="gabby-photo" data-caption="Classic coquette portrait: blush dress, feminine silhouette, and garden light." loading="lazy" decoding="async">
+          </div>
+          <p class="slider-caption" id="slider-caption" aria-live="polite"></p>
+        </div>
+        <button class="slider-arrow slider-next" type="button" aria-label="Next image">&#8594;</button>
       </div>
       <div class="hero-about" id="about">
         <p class="card-label">About</p>
