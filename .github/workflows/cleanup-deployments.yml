@@ -1,0 +1,70 @@
+name: Cleanup Old Deployments
+
+on:
+  workflow_run:
+    workflows: ["Deploy GitHub Pages"]
+    types: [completed]
+  schedule:
+    - cron: "0 3 * * 0"   # weekly on Sunday at 3 AM UTC
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  deployments: write
+
+jobs:
+  cleanup:
+    name: Delete old deployments
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Delete old deployments (keep latest)
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo  = context.repo.repo;
+
+            // ── 1. Fetch all deployments (most-recent first) ──────────────
+            const { data: deployments } = await github.rest.repos.listDeployments({
+              owner,
+              repo,
+              environment: "github-pages",
+              per_page: 100,
+            });
+
+            if (deployments.length <= 1) {
+              core.info("Only one (or zero) deployments found – nothing to clean.");
+              return;
+            }
+
+            // Keep the first entry (latest) and delete the rest
+            const toDelete = deployments.slice(1);
+            core.info(`Found ${deployments.length} deployments. Deleting ${toDelete.length} old ones.`);
+
+            for (const deployment of toDelete) {
+              // A deployment must be marked inactive before it can be deleted
+              try {
+                await github.rest.repos.createDeploymentStatus({
+                  owner,
+                  repo,
+                  deployment_id: deployment.id,
+                  state: "inactive",
+                });
+              } catch (err) {
+                core.warning(`Could not mark deployment ${deployment.id} inactive: ${err.message}`);
+              }
+
+              try {
+                await github.rest.repos.deleteDeployment({
+                  owner,
+                  repo,
+                  deployment_id: deployment.id,
+                });
+                core.info(`Deleted deployment ${deployment.id} (ref: ${deployment.ref})`);
+              } catch (err) {
+                core.warning(`Could not delete deployment ${deployment.id}: ${err.message}`);
+              }
+            }
+
+            core.info("Cleanup complete.");
