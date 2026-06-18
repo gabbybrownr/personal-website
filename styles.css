@@ -210,17 +210,29 @@ main {
   position: relative;
 }
 
-.hero-collage {
+
+.hero-collage-carousel {
   padding: 14px;
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 12px;
-  align-items: stretch;
-  min-height: clamp(380px, 55vw, 640px);
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.collage-viewport {
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.collage-track {
+  display: flex;
+  transition: transform 0.34s ease;
+  touch-action: pan-y;
 }
 
 .collage-card {
+  flex: 0 0 100%;
   margin: 0;
   border-radius: var(--radius-lg);
   border: 1px solid var(--pink-200);
@@ -229,21 +241,7 @@ main {
   display: grid;
   grid-template-rows: 1fr auto;
   box-shadow: 0 12px 26px rgba(194, 98, 140, 0.18);
-}
-
-.collage-main {
-  grid-column: 1;
-  grid-row: 1 / span 2;
-}
-
-.collage-top-right {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.collage-bottom-right {
-  grid-column: 2;
-  grid-row: 2;
+  min-height: clamp(360px, 55vw, 640px);
 }
 
 .gabby-photo {
@@ -273,21 +271,13 @@ main {
 }
 
 @media (max-width: 760px) {
-  .hero-collage {
+  .hero-collage-carousel {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    min-height: 0;
-  }
-
-  .collage-main,
-  .collage-top-right,
-  .collage-bottom-right {
-    grid-column: auto;
-    grid-row: auto;
   }
 
   .collage-card {
     height: clamp(240px, 72vw, 420px);
+    min-height: unset;
   }
 }
 
@@ -313,9 +303,7 @@ main {
 
 @media (max-width: 760px) {
   .slider-arrow {
-    width: 40px;
-    height: 40px;
-    justify-self: center;
+    display: none;
   }
 }
 

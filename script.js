@@ -3,6 +3,10 @@ const siteNav = document.querySelector('.site-nav');
 const revealSections = document.querySelectorAll('.section-reveal');
 const metricNodes = document.querySelectorAll('.metric[data-target]');
 const navLinks = document.querySelectorAll('.site-nav a[href^="#"]');
+const collageTrack = document.querySelector('.collage-track');
+const collageViewport = document.querySelector('.collage-viewport');
+const sliderPrev = document.querySelector('.slider-prev');
+const sliderNext = document.querySelector('.slider-next');
 
 if (menuButton && siteNav) {
   menuButton.addEventListener('click', () => {
@@ -17,6 +21,54 @@ if (menuButton && siteNav) {
       siteNav.classList.remove('open');
     });
   });
+}
+
+if (collageTrack && sliderPrev && sliderNext) {
+  const slides = Array.from(collageTrack.querySelectorAll('.collage-card'));
+  let activeSlide = 0;
+  let touchStartX = 0;
+
+  function showSlide(index) {
+    activeSlide = (index + slides.length) % slides.length;
+    collageTrack.style.transform = `translateX(-${activeSlide * 100}%)`;
+  }
+
+  sliderPrev.addEventListener('click', () => {
+    showSlide(activeSlide - 1);
+  });
+
+  sliderNext.addEventListener('click', () => {
+    showSlide(activeSlide + 1);
+  });
+
+  if (collageViewport) {
+    collageViewport.addEventListener(
+      'touchstart',
+      (event) => {
+        touchStartX = event.changedTouches[0].clientX;
+      },
+      { passive: true }
+    );
+
+    collageViewport.addEventListener(
+      'touchend',
+      (event) => {
+        const touchEndX = event.changedTouches[0].clientX;
+        const deltaX = touchEndX - touchStartX;
+        if (Math.abs(deltaX) < 40) {
+          return;
+        }
+        if (deltaX < 0) {
+          showSlide(activeSlide + 1);
+        } else {
+          showSlide(activeSlide - 1);
+        }
+      },
+      { passive: true }
+    );
+  }
+
+  showSlide(0);
 }
 
 const revealObserver = new IntersectionObserver(
