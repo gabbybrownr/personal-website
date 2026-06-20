@@ -515,6 +515,42 @@ li {
   margin-bottom: 10px;
 }
 
+.story-series {
+  grid-column: 1 / -1;
+}
+
+.series-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.series-item {
+  border: 1px solid var(--pink-200);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.84);
+  padding: 14px;
+}
+
+.series-id {
+  color: var(--pink-500);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  margin-bottom: 6px;
+}
+
+.series-item h4 {
+  font-family: "Playfair Display", serif;
+  color: var(--rose-title);
+  font-size: 1.22rem;
+  margin-bottom: 6px;
+}
+
+.series-item p {
+  color: var(--ink-700);
+}
+
 .signature-panel ul {
   list-style: none;
   display: grid;
@@ -987,6 +1023,10 @@ li {
   }
 
   .story {
+    grid-template-columns: 1fr;
+  }
+
+  .series-list {
     grid-template-columns: 1fr;
   }
 
