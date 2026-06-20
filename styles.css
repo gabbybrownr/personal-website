@@ -338,6 +338,13 @@ main {
   text-align: center;
 }
 
+.hero > .numbers.snapshot-inline {
+  grid-column: 1 / -1;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .hero-about .card-label {
   margin-bottom: 10px;
 }
