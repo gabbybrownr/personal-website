@@ -184,7 +184,6 @@ main {
 .hero,
 .story,
 .moodboard,
-.series,
 .numbers,
 .connect {
   border: 1px solid var(--line);
@@ -562,36 +561,6 @@ li {
   border-radius: 999px;
   background: var(--c);
   border: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-.timeline {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-}
-
-.timeline-item {
-  border: 1px solid var(--pink-200);
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.84);
-  padding: 18px;
-}
-
-.timeline-item .tag {
-  color: var(--pink-500);
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  font-size: 0.8rem;
-  margin-bottom: 8px;
-}
-
-.timeline-item h3 {
-  font-size: 1.2rem;
-  margin-bottom: 6px;
-}
-
-.timeline-item p {
-  color: var(--ink-700);
 }
 
 .tiktok {
@@ -1007,10 +976,6 @@ li {
 
   .site-nav.open {
     display: flex;
-  }
-
-  .timeline {
-    grid-template-columns: 1fr;
   }
 
   .story {
