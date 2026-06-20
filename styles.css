@@ -183,6 +183,7 @@ main {
 
 .hero,
 .story,
+.services,
 .moodboard,
 .numbers,
 .connect {
@@ -199,18 +200,19 @@ main {
   background: var(--glass);
   box-shadow: var(--shadow);
   padding: 8px;
-  max-width: 860px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
   overflow: hidden;
 }
 
 .feature-strip img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 4.2;
+  aspect-ratio: 16 / 5.4;
   height: auto;
   object-fit: cover;
-  object-position: 42% center;
+  object-position: 42% 28%;
   border-radius: calc(var(--radius-lg) - 2px);
   border: 1px solid var(--pink-200);
 }
@@ -601,6 +603,50 @@ li {
   color: var(--ink-700);
   font-size: 0.85rem;
   line-height: 1.35;
+}
+
+.services-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 1.1fr) minmax(320px, 1fr);
+  gap: 12px;
+  align-items: stretch;
+}
+
+.services-image-wrap {
+  margin: 0;
+  border: 1px solid var(--pink-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.84);
+}
+
+.services-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.services-copy {
+  border: 1px solid var(--pink-200);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.84);
+  padding: 16px;
+  color: var(--ink-700);
+}
+
+.services-copy ul {
+  margin: 12px 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 6px;
+}
+
+.services-note {
+  margin-top: 10px;
+  font-weight: 600;
 }
 
 .signature-panel ul {
@@ -1023,6 +1069,15 @@ li {
 
   .partnership-grid {
     grid-template-columns: 1fr;
+  }
+
+  .services-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .services-image {
+    min-height: 260px;
+    max-height: 360px;
   }
 
   .brand-evidence-wrap {
