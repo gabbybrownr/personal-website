@@ -198,8 +198,8 @@ main {
   border-radius: var(--radius-xl);
   background: var(--glass);
   box-shadow: var(--shadow);
-  padding: 10px;
-  max-width: 980px;
+  padding: 8px;
+  max-width: 860px;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -207,7 +207,7 @@ main {
 .feature-strip img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 6;
+  aspect-ratio: 16 / 4.2;
   height: auto;
   object-fit: cover;
   object-position: 42% center;
