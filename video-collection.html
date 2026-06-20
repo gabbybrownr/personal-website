@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Collection | Gabby Brown</title>
+  <meta name="description" content="Top Gabby Brown haul and product story videos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-a: #f9d7e3;
+      --bg-b: #fff6fa;
+      --ink: #672f4c;
+      --ink-soft: #8e4d70;
+      --line: rgba(198, 108, 149, 0.28);
+      --card: rgba(255, 255, 255, 0.9);
+      --title: #7f2d56;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at 10% 0%, var(--bg-a), var(--bg-b) 55%);
+    }
+
+    .wrap {
+      width: min(1140px, 94vw);
+      margin: 18px auto 36px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .bar,
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--card);
+      box-shadow: 0 14px 34px rgba(198, 108, 149, 0.16);
+    }
+
+    .bar {
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      text-decoration: none;
+      color: var(--title);
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 1.45rem;
+    }
+
+    .back {
+      text-decoration: none;
+      color: var(--ink-soft);
+      font-weight: 700;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .panel {
+      padding: clamp(16px, 2.8vw, 24px);
+    }
+
+    .kicker {
+      margin: 0 0 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.74rem;
+      color: #be4f7f;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      color: var(--title);
+      font-size: clamp(1.55rem, 4vw, 2.4rem);
+    }
+
+    .desc {
+      margin: 10px 0 0;
+      color: var(--ink-soft);
+      max-width: 70ch;
+    }
+
+    .video-grid {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .video-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      padding: 10px;
+    }
+
+    .video-meta {
+      margin: 0 0 8px;
+      color: var(--ink-soft);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .video-frame-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid var(--line);
+    }
+
+    .video-frame {
+      display: block;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border: 0;
+    }
+
+    .video-link {
+      margin-top: 8px;
+      display: inline-flex;
+      text-decoration: none;
+      color: #fff;
+      background: #ff3b6f;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="bar">
+      <a class="brand" href="index.html#top">Gabby Brown</a>
+      <a class="back" href="index.html#story">Back to Highlights</a>
+    </header>
+
+    <main class="panel">
+      <p class="kicker" id="topic-kicker">Video Collection</p>
+      <h1 id="topic-title">Top Videos</h1>
+      <p class="desc" id="topic-desc">Curated top videos.</p>
+      <section id="video-grid" class="video-grid" aria-label="Top videos"></section>
+    </main>
+  </div>
+
+  <script>
+    const topicData = {
+      "haul-videos": {
+        kicker: "Haul Videos",
+        title: "Top 10 Haul Videos",
+        desc: "Top haul picks with direct TikTok player embeds.",
+        videos: [
+          { id: "7504461138743119135", views: 638600, label: "Birthday dress haul Pt. 3" },
+          { id: "7505909339182353695", views: 115900, label: "Garden picnic birthday haul" },
+          { id: "7643968802933198111", views: 26200, label: "Summer SHEIN haul" },
+          { id: "7621332280509828383", views: 24700, label: "Spring dresses haul" },
+          { id: "7649133498279791903", views: 13400, label: "SHEIN birthday gifts haul" },
+          { id: "7646958464853396767", views: 12700, label: "SHEIN vacation dress haul" },
+          { id: "7650283305430011166", views: 12600, label: "Feminine birthday haul" },
+          { id: "7651787353052187918", views: 12500, label: "Pink top haul styling" },
+          { id: "7644321950008970527", views: 10400, label: "GlowMode sets haul" },
+          { id: "7647699747846802719", views: 10200, label: "LaceMade princess haul" }
+        ]
+      },
+      "product-stories": {
+        kicker: "Product Stories",
+        title: "Top 10 Product Story Videos",
+        desc: "Highest-view product-focused stories and recommendations.",
+        videos: [
+          { id: "7504461138743119135", views: 638600, label: "LaceMade, SHEIN & TEMU product picks" },
+          { id: "7505909339182353695", views: 115900, label: "Birthday event products and accessories" },
+          { id: "7643968802933198111", views: 26200, label: "SHEIN summer product selection" },
+          { id: "7621332280509828383", views: 24700, label: "Spring dresses product showcase" },
+          { id: "7649133498279791903", views: 13400, label: "Birthday gift product haul" },
+          { id: "7646958464853396767", views: 12700, label: "Vacation dress product edit" },
+          { id: "7650283305430011166", views: 12600, label: "SHEIN feminine product review" },
+          { id: "7651787353052187918", views: 12500, label: "Pink top product styling" },
+          { id: "7644321950008970527", views: 10400, label: "GlowMode activewear story" },
+          { id: "7644378509011340574", views: 8800, label: "PinkBlush dress product story" }
+        ]
+      }
+    };
+
+    function formatViews(count) {
+      if (count >= 1000000) {
+        return (count / 1000000).toFixed(1) + "M views";
+      }
+      if (count >= 1000) {
+        return (count / 1000).toFixed(1) + "K views";
+      }
+      return count + " views";
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const key = params.get("topic") || "haul-videos";
+    const topic = topicData[key] || topicData["haul-videos"];
+
+    document.getElementById("topic-kicker").textContent = topic.kicker;
+    document.getElementById("topic-title").textContent = topic.title;
+    document.getElementById("topic-desc").textContent = topic.desc;
+
+    const grid = document.getElementById("video-grid");
+    topic.videos
+      .sort((a, b) => b.views - a.views)
+      .slice(0, 10)
+      .forEach((video) => {
+        const url = `https://www.tiktok.com/@gabbybrownr/video/${video.id}`;
+        const card = document.createElement("article");
+        card.className = "video-card";
+        card.innerHTML = `
+          <p class="video-meta">${video.label} • ${formatViews(video.views)}</p>
+          <div class="video-frame-wrap">
+            <iframe
+              class="video-frame"
+              src="https://www.tiktok.com/player/v1/${video.id}?controls=1&music_info=0&description=0&rel=0"
+              title="${video.label}"
+              allow="encrypted-media; fullscreen"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+          <a class="video-link" href="${url}" target="_blank" rel="noopener">Open on TikTok</a>
+        `;
+        grid.appendChild(card);
+      });
+  </script>
+</body>
+</html>

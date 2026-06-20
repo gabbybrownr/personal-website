@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography | Gabby Brown</title>
+  <meta name="description" content="Photography collection featuring Gabby Brown portraits and lifestyle visuals.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-a: #fde2ec;
+      --bg-b: #fff8fb;
+      --ink: #7a2d4f;
+      --ink-soft: #9d5376;
+      --line: rgba(212, 130, 166, 0.35);
+      --card: rgba(255, 255, 255, 0.9);
+      --shadow: 0 16px 36px rgba(197, 111, 146, 0.18);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at 10% 0%, var(--bg-a), var(--bg-b) 58%);
+    }
+
+    .wrap {
+      width: min(1160px, 94vw);
+      margin: 18px auto 34px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .bar,
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .bar {
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .brand {
+      text-decoration: none;
+      color: var(--ink);
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
+
+    .back {
+      text-decoration: none;
+      color: var(--ink-soft);
+      font-weight: 700;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: #fff;
+    }
+
+    .panel {
+      padding: clamp(16px, 2.4vw, 24px);
+    }
+
+    .kicker {
+      margin: 0 0 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.72rem;
+      color: #be4f7f;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.55rem, 4vw, 2.45rem);
+    }
+
+    .desc {
+      margin: 10px 0 0;
+      color: var(--ink-soft);
+    }
+
+    .gallery {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .photo-tile {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .photo-tile:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(197, 111, 146, 0.2);
+    }
+
+    .photo-tile img {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .tile-name {
+      margin: 0;
+      padding: 8px 10px 10px;
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(34, 12, 24, 0.8);
+      z-index: 50;
+      padding: 20px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox figure {
+      margin: 0;
+      width: min(1100px, 96vw);
+      max-height: 92vh;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .lightbox img {
+      width: 100%;
+      max-height: 84vh;
+      object-fit: contain;
+      display: block;
+      background: #f8f0f4;
+    }
+
+    .lightbox figcaption {
+      padding: 10px 12px;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 1050px) {
+      .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 760px) {
+      .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .photo-tile img { height: 180px; }
+    }
+
+    @media (max-width: 520px) {
+      .gallery { grid-template-columns: 1fr; }
+      .photo-tile img { height: 250px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="bar">
+      <a class="brand" href="index.html#top">Gabby Brown</a>
+      <a class="back" href="index.html#story">Back to Highlights</a>
+    </header>
+
+    <main class="panel">
+      <p class="kicker">Photography</p>
+      <h1>Photo Collection</h1>
+      <p class="desc">Tap any photo to view full-screen. This gallery includes all photos currently in your images folder.</p>
+
+      <section class="gallery" id="gallery" aria-label="Photography gallery"></section>
+    </main>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <figure>
+      <img id="lightbox-image" alt="Expanded gallery image">
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+  </div>
+
+  <script>
+    const imageFiles = [
+      "femenine-table.jpg",
+      "gabby-beach.jpg",
+      "gabby-bike.jpg",
+      "gabby-birthday-picnic-cake.jpg",
+      "gabby-blue-dress.jpg",
+      "gabby-blush-dress-garden-walk.jpg",
+      "gabby-book-horizontal.jpg",
+      "gabby-camera.jpg",
+      "gabby-flowers.jpg",
+      "gabby-garden.jpg",
+      "gabby-garden-floral-portrait.jpg",
+      "gabby-jewelry.jpg",
+      "gabby-photography-portada.jpg",
+      "gabby-picnic-table.jpg",
+      "gabby-pink-bolso.jpg",
+      "gabby-pink-dress.jpg",
+      "gabby-services-collage.png",
+      "gabby-sit.jpg",
+      "gabby-watch.jpg"
+    ];
+
+    function humanizeName(fileName) {
+      return fileName
+        .replace(/\.[a-z0-9]+$/i, "")
+        .replace(/[-_]+/g, " ")
+        .replace(/\bgabby\b/gi, "Gabby")
+        .replace(/\bfemenine\b/gi, "Feminine")
+        .replace(/\b\w/g, (m) => m.toUpperCase());
+    }
+
+    const gallery = document.getElementById("gallery");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+
+    imageFiles.forEach((file) => {
+      const title = humanizeName(file);
+      const card = document.createElement("button");
+      card.type = "button";
+      card.className = "photo-tile";
+      card.setAttribute("aria-label", "Open " + title);
+      card.innerHTML = `
+        <img src="images/${file}" alt="${title}" loading="lazy" decoding="async">
+        <p class="tile-name">${title}</p>
+      `;
+
+      card.addEventListener("click", () => {
+        lightboxImage.src = `images/${file}`;
+        lightboxImage.alt = title;
+        lightboxCaption.textContent = title;
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+      });
+
+      gallery.appendChild(card);
+    });
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target !== lightbox) {
+        return;
+      }
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImage.removeAttribute("src");
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImage.removeAttribute("src");
+      }
+    });
+  </script>
+</body>
+</html>
