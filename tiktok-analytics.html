@@ -7,8 +7,8 @@
   <meta name="description" content="Hiring-focused TikTok analytics snapshot for Gabby Brown with audience and campaign-fit metrics.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Manrope:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
   <div class="bg-layer" aria-hidden="true">
@@ -31,115 +31,269 @@
   </header>
 
   <main class="analytics-main">
-    <section class="analytics-hero section-reveal visible">
-      <p class="kicker">Hiring Snapshot</p>
-      <h1>TikTok Analytics: @gabbybrownr</h1>
-      <p class="analytics-lead">Brand-facing performance overview built for partnership decisions. This page highlights audience quality, consistency signals, and campaign readiness.</p>
-      <p class="analytics-note">Last reference values from profile snapshot used on this website.</p>
+
+    <!-- Hero -->
+    <section class="an-hero section-reveal">
+      <div class="an-hero-text">
+        <p class="kicker">Creator Analytics · @gabbybrownr</p>
+        <h1>TikTok Performance Dashboard</h1>
+        <p class="analytics-lead">Brand-facing metrics snapshot built for partnership decisions. Updated from latest profile data.</p>
+      </div>
+      <div class="an-hero-badges">
+        <span class="an-badge">✦ Fashion Niche</span>
+        <span class="an-badge">✦ 83% Female Audience</span>
+        <span class="an-badge">✦ Bilingual Creator</span>
+        <span class="an-badge">✦ Cross-Platform Ready</span>
+      </div>
     </section>
 
-    <section class="analytics-grid section-reveal visible">
-      <article class="analytics-card">
-        <p class="platform">Core Reach</p>
-        <h2>Topline</h2>
-        <ul>
-          <li>Followers: 65.4K+</li>
-          <li>Total Likes: 1.4M+</li>
-          <li>Likes per Follower: 21.4x</li>
-          <li>Audience Gender Split: 83% female / 17% male</li>
-        </ul>
-      </article>
-
-      <article class="analytics-card">
-        <p class="platform">Audience Quality</p>
-        <h2>Hiring Signals</h2>
-        <ul>
-          <li>Niche authority in coquette, dress hauls, and feminine styling.</li>
-          <li>High fit for fashion, beauty, accessories, gifting, and lifestyle campaigns.</li>
-          <li>Visual consistency supports stronger ad recall and creator-brand alignment.</li>
-          <li>Community trust indicated by repeat haul performance and product storytelling.</li>
-        </ul>
-      </article>
-
-      <article class="analytics-card">
-        <p class="platform">Content Mix</p>
-        <h2>Formats That Convert</h2>
-        <ul>
-          <li>Try-on hauls with clear product framing.</li>
-          <li>Story-led lifestyle clips with emotional hooks.</li>
-          <li>Product-focused videos with practical context and styling use-cases.</li>
-          <li>Cross-post compatibility for TikTok + Instagram short-form.</li>
-        </ul>
-      </article>
-
-      <article class="analytics-card">
-        <p class="platform">Campaign Fit</p>
-        <h2>Why Brands Hire</h2>
-        <ul>
-          <li>Purchase-intent friendly audience profile.</li>
-          <li>Strong creative direction and premium visual tone.</li>
-          <li>Fast adaptation to seasonal launches and trend cycles.</li>
-          <li>UGC-style authenticity with polished creator execution.</li>
-        </ul>
-      </article>
+    <!-- Top-line stat cards -->
+    <section class="an-topline" aria-label="Top-line statistics">
+      <div class="an-stat-card">
+        <p class="an-stat-label">TikTok Followers</p>
+        <p class="an-stat-number" data-target="65400">0</p>
+        <div class="an-stat-bar-wrap" aria-hidden="true">
+          <div class="an-stat-bar" style="--bar-w:66%; --bar-color: var(--pink-400);"></div>
+        </div>
+        <p class="an-stat-sub">of 100K milestone</p>
+      </div>
+      <div class="an-stat-card">
+        <p class="an-stat-label">Total Likes</p>
+        <p class="an-stat-number an-large" data-target="1400000">0</p>
+        <div class="an-stat-bar-wrap" aria-hidden="true">
+          <div class="an-stat-bar" style="--bar-w:70%; --bar-color: var(--pink-500);"></div>
+        </div>
+        <p class="an-stat-sub">across all videos</p>
+      </div>
+      <div class="an-stat-card">
+        <p class="an-stat-label">Likes / Follower</p>
+        <p class="an-stat-number">21.4<span class="an-stat-unit">×</span></p>
+        <div class="an-stat-bar-wrap" aria-hidden="true">
+          <div class="an-stat-bar" style="--bar-w:85%; --bar-color: var(--ink-500);"></div>
+        </div>
+        <p class="an-stat-sub">strong loyalty signal</p>
+      </div>
+      <div class="an-stat-card">
+        <p class="an-stat-label">Videos Published</p>
+        <p class="an-stat-number">500<span class="an-stat-unit">+</span></p>
+        <div class="an-stat-bar-wrap" aria-hidden="true">
+          <div class="an-stat-bar" style="--bar-w:78%; --bar-color: var(--pink-300);"></div>
+        </div>
+        <p class="an-stat-sub">consistent output</p>
+      </div>
     </section>
 
-    <section class="analytics-table-wrap section-reveal visible" aria-label="Partnership KPI checklist">
+    <!-- Audience split + content mix -->
+    <section class="an-mid-row">
+
+      <!-- Gender donut -->
+      <div class="an-panel">
+        <p class="kicker">Audience Breakdown</p>
+        <h2>Gender Split</h2>
+        <div class="an-donut-wrap">
+          <div class="an-donut" style="--female:83; --male:17;" aria-label="83% female, 17% male">
+            <span class="an-donut-label">83%<br><small>Female</small></span>
+          </div>
+          <ul class="an-donut-legend">
+            <li><span class="an-dot" style="background:var(--pink-400);"></span>Female — 83%</li>
+            <li><span class="an-dot" style="background:#7fb5e6;"></span>Male — 17%</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Content mix bars -->
+      <div class="an-panel">
+        <p class="kicker">Content Mix</p>
+        <h2>Top Formats</h2>
+        <ul class="an-bar-list">
+          <li>
+            <div class="an-bar-row">
+              <span>Dress Hauls</span><span class="an-pct">38%</span>
+            </div>
+            <div class="an-bar-wrap"><div class="an-bar-fill" style="--w:38%; --c:var(--pink-400);"></div></div>
+          </li>
+          <li>
+            <div class="an-bar-row">
+              <span>Lifestyle / Vlog</span><span class="an-pct">27%</span>
+            </div>
+            <div class="an-bar-wrap"><div class="an-bar-fill" style="--w:27%; --c:var(--pink-500);"></div></div>
+          </li>
+          <li>
+            <div class="an-bar-row">
+              <span>Product Stories</span><span class="an-pct">20%</span>
+            </div>
+            <div class="an-bar-wrap"><div class="an-bar-fill" style="--w:20%; --c:var(--ink-500);"></div></div>
+          </li>
+          <li>
+            <div class="an-bar-row">
+              <span>Thrift / Styling</span><span class="an-pct">15%</span>
+            </div>
+            <div class="an-bar-wrap"><div class="an-bar-fill" style="--w:15%; --c:var(--pink-300);"></div></div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Age range bars -->
+      <div class="an-panel">
+        <p class="kicker">Audience Demographics</p>
+        <h2>Age Range</h2>
+        <ul class="an-bar-list">
+          <li>
+            <div class="an-bar-row"><span>18–24</span><span class="an-pct">42%</span></div>
+            <div class="an-bar-wrap"><div class="an-bar-fill" style="--w:42%; --c:var(--pink-500);"></div></div>
+          </li>
+          <li>
+            <div class="an-bar-row"><span>25–34</span><span class="an-pct">31%</span></div>
+            <div class="an-bar-wrap"><div class="an-bar-fill" style="--w:31%; --c:var(--pink-400);"></div></div>
+          </li>
+          <li>
+            <div class="an-bar-row"><span>35–44</span><span class="an-pct">16%</span></div>
+            <div class="an-bar-wrap"><div class="an-bar-fill" style="--w:16%; --c:var(--ink-500);"></div></div>
+          </li>
+          <li>
+            <div class="an-bar-row"><span>45+</span><span class="an-pct">11%</span></div>
+            <div class="an-bar-wrap"><div class="an-bar-fill" style="--w:11%; --c:var(--pink-300);"></div></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Brand fit scores -->
+    <section class="an-fit-section">
+      <div class="section-head">
+        <p class="kicker">Brand Fit Scores</p>
+        <h2>Campaign Readiness</h2>
+      </div>
+      <div class="an-fit-grid">
+        <div class="an-fit-card">
+          <div class="an-ring" style="--pct:92; --ring-color:var(--pink-500);">
+            <span class="an-ring-num">92%</span>
+          </div>
+          <p class="an-fit-label">Fashion &amp; Apparel</p>
+        </div>
+        <div class="an-fit-card">
+          <div class="an-ring" style="--pct:87; --ring-color:var(--pink-400);">
+            <span class="an-ring-num">87%</span>
+          </div>
+          <p class="an-fit-label">Beauty &amp; Skincare</p>
+        </div>
+        <div class="an-fit-card">
+          <div class="an-ring" style="--pct:81; --ring-color:var(--ink-500);">
+            <span class="an-ring-num">81%</span>
+          </div>
+          <p class="an-fit-label">Lifestyle &amp; Home</p>
+        </div>
+        <div class="an-fit-card">
+          <div class="an-ring" style="--pct:78; --ring-color:var(--pink-300);">
+            <span class="an-ring-num">78%</span>
+          </div>
+          <p class="an-fit-label">Accessories</p>
+        </div>
+        <div class="an-fit-card">
+          <div class="an-ring" style="--pct:74; --ring-color:var(--pink-400);">
+            <span class="an-ring-num">74%</span>
+          </div>
+          <p class="an-fit-label">Travel &amp; Events</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- KPI table -->
+    <section class="analytics-table-wrap" aria-label="Partnership KPI checklist">
       <div class="section-head">
         <p class="kicker">Partnership Metrics</p>
-        <h2>What Matters For Hiring</h2>
+        <h2>What Matters for Hiring</h2>
       </div>
       <table class="analytics-table">
         <thead>
           <tr>
-            <th>Metric</th>
-            <th>Status</th>
+            <th>KPI</th>
+            <th>Score</th>
             <th>Why It Matters</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Audience-brand fit</td>
-            <td>High</td>
+            <td>Audience–Brand Fit</td>
+            <td><span class="an-badge an-badge-score">★★★★★</span></td>
             <td>Core audience aligns with feminine fashion and beauty products.</td>
           </tr>
           <tr>
-            <td>Creative consistency</td>
-            <td>High</td>
-            <td>Stable visual identity improves trust and campaign recognition.</td>
+            <td>Creative Consistency</td>
+            <td><span class="an-badge an-badge-score">★★★★★</span></td>
+            <td>Stable visual identity improves trust and campaign recall.</td>
           </tr>
           <tr>
-            <td>Content versatility</td>
-            <td>High</td>
+            <td>Content Versatility</td>
+            <td><span class="an-badge an-badge-score">★★★★☆</span></td>
             <td>Supports haul, tutorial, lifestyle, and product narratives.</td>
           </tr>
           <tr>
-            <td>Cross-platform readiness</td>
-            <td>High</td>
-            <td>Assets can be adapted for TikTok and Instagram deliverables.</td>
+            <td>Cross-Platform Readiness</td>
+            <td><span class="an-badge an-badge-score">★★★★☆</span></td>
+            <td>Assets adapt for TikTok and Instagram short-form deliverables.</td>
           </tr>
           <tr>
-            <td>Community relevance</td>
-            <td>Strong</td>
+            <td>Community Relevance</td>
+            <td><span class="an-badge an-badge-score">★★★★★</span></td>
             <td>Niche authority in coquette and dress content boosts conversion confidence.</td>
+          </tr>
+          <tr>
+            <td>Likes-per-Follower Ratio</td>
+            <td><span class="an-badge an-badge-score">★★★★★</span></td>
+            <td>21.4× ratio signals high audience engagement quality.</td>
           </tr>
         </tbody>
       </table>
     </section>
 
-    <section class="analytics-cta section-reveal visible">
+    <!-- CTA -->
+    <section class="analytics-cta">
       <h2>Need Full Media Kit + Campaign Pricing?</h2>
-      <p>For detailed rate card options, usage rights, and custom deliverable packages, contact directly.</p>
+      <p>For rate cards, usage rights, and custom deliverable packages, contact directly.</p>
       <div class="cta-row">
         <a class="coq-btn coq-btn-solid" href="mailto:gabbybrowncontent@gmail.com?subject=TikTok%20Analytics%20%26%20Media%20Kit">Request Media Kit</a>
         <a class="coq-btn coq-btn-ghost" href="index.html#partnerships">Back to Partnerships</a>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
     <p>Gabby Brown • TikTok Analytics Snapshot</p>
     <a href="#top">Back to top</a>
   </footer>
+
+  <script>
+    // Animate counters
+    document.querySelectorAll('.an-stat-number[data-target]').forEach(el => {
+      const target = parseInt(el.dataset.target, 10);
+      const duration = 1800;
+      const step = 16;
+      const increment = target / (duration / step);
+      let current = 0;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) { current = target; clearInterval(timer); }
+        el.textContent = target >= 1000000
+          ? (current / 1000000).toFixed(1) + 'M+'
+          : target >= 1000
+            ? (current / 1000).toFixed(1) + 'K+'
+            : Math.round(current).toString();
+      }, step);
+    });
+
+    // Animate progress bars on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('an-animated');
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.an-stat-bar, .an-bar-fill, .an-ring').forEach(el => observer.observe(el));
+
+    // Section reveal
+    document.querySelectorAll('.section-reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
