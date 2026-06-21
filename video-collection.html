@@ -183,14 +183,14 @@
         title: "Featured Haul & Lifestyle References",
         desc: "Curated TikTok references for try-ons, home decor, thrifting, and makeup.",
         videos: [
-          { url: "https://www.tiktok.com/t/ZP8sWnEpM/", label: "Try on hauls", featured: true },
-          { url: "https://www.tiktok.com/t/ZP8s71rYQ/", label: "Try on hauls" },
-          { url: "https://www.tiktok.com/t/ZP8sWWRpN/", label: "Home Decor Videos" },
-          { url: "https://www.tiktok.com/t/ZP8sW4n9t/", label: "Home Decor Videos" },
-          { url: "https://www.tiktok.com/t/ZP8sWsSBb/", label: "Thrifting Videos" },
-          { url: "https://www.tiktok.com/t/ZP8sWGocT/", label: "Thrifting Videos" },
-          { url: "https://www.tiktok.com/t/ZP8sWE9Nn/", label: "Makeup" },
-          { url: "https://www.tiktok.com/t/ZP8sWon7o/", label: "Makeup" }
+          { id: "7504461138743119135", views: 0, label: "Try on hauls ⭐" },
+          { id: "7578306350929775902", views: 0, label: "Try on hauls" },
+          { id: "7548238258849844511", views: 0, label: "Home Decor Videos" },
+          { id: "7588709616448441630", views: 0, label: "Home Decor Videos" },
+          { id: "7555657427685854495", views: 0, label: "Thrifting Videos" },
+          { id: "7549712430650232094", views: 0, label: "Thrifting Videos" },
+          { id: "7550474680797318431", views: 0, label: "Makeup" },
+          { id: "7617191488597855518", views: 0, label: "Makeup" }
         ]
       },
       "product-stories": {
@@ -236,8 +236,9 @@
 
       if (video.id) {
         const url = `https://www.tiktok.com/@gabbybrownr/video/${video.id}`;
+        const meta = video.views > 0 ? `${video.label} • ${formatViews(video.views)}` : video.label;
         card.innerHTML = `
-          <p class="video-meta">${video.label} • ${formatViews(video.views)}</p>
+          <p class="video-meta">${meta}</p>
           <div class="video-frame-wrap">
             <iframe
               class="video-frame"
@@ -249,23 +250,6 @@
             ></iframe>
           </div>
           <a class="video-link" href="${url}" target="_blank" rel="noopener">Open on TikTok</a>
-        `;
-      } else if (video.url) {
-        const featuredTag = video.featured ? " ⭐" : "";
-        card.innerHTML = `
-          <p class="video-meta">${video.label}${featuredTag}</p>
-          <div class="video-frame-wrap" style="background:#fff;">
-            <blockquote
-              class="tiktok-embed"
-              cite="${video.url}"
-              style="margin:0;min-width:100%;max-width:100%;"
-            >
-              <section>
-                <a target="_blank" rel="noopener" href="${video.url}">Open on TikTok</a>
-              </section>
-            </blockquote>
-          </div>
-          <a class="video-link" href="${video.url}" target="_blank" rel="noopener">Open on TikTok</a>
         `;
       } else if (video.image) {
         card.innerHTML = `
@@ -285,6 +269,5 @@
       grid.appendChild(card);
     });
   </script>
-  <script async src="https://www.tiktok.com/embed.js"></script>
 </body>
 </html>
