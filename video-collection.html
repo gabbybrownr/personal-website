@@ -254,8 +254,16 @@
         const featuredTag = video.featured ? " ⭐" : "";
         card.innerHTML = `
           <p class="video-meta">${video.label}${featuredTag}</p>
-          <div class="video-frame-wrap" style="display:flex;align-items:center;justify-content:center;aspect-ratio:9/16;background:linear-gradient(180deg,#ffdce8,#fff6fa);color:#8e4d70;font-weight:700;text-align:center;padding:14px;">
-            TikTok reference link
+          <div class="video-frame-wrap" style="background:#fff;">
+            <blockquote
+              class="tiktok-embed"
+              cite="${video.url}"
+              style="margin:0;min-width:100%;max-width:100%;"
+            >
+              <section>
+                <a target="_blank" rel="noopener" href="${video.url}">Open on TikTok</a>
+              </section>
+            </blockquote>
           </div>
           <a class="video-link" href="${video.url}" target="_blank" rel="noopener">Open on TikTok</a>
         `;
@@ -277,5 +285,6 @@
       grid.appendChild(card);
     });
   </script>
+  <script async src="https://www.tiktok.com/embed.js"></script>
 </body>
 </html>
