@@ -1145,27 +1145,29 @@ li {
 /* Top-line stat cards */
 .an-topline {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
+  max-width: 760px;
+  width: min(760px, 92%);
   padding: clamp(16px, 3vw, 28px);
 }
 
 .an-stat-card {
-  border: 1px solid var(--pink-200);
+  background: rgba(255, 255, 255, 0.92);
   border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.92);
   padding: 18px 16px;
-  display: grid;
+  padding: 8px;
+  box-shadow: 0 12px 28px rgba(194, 98, 140, 0.16);
   gap: 4px;
 }
 
 .an-stat-label {
-  font-size: 0.75rem;
-  font-weight: 800;
+  width: 100%;
+  max-width: 100%;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--pink-500);
+  max-height: 460px;
+  object-fit: contain;
 }
+  border-radius: 12px;
 
 .an-stat-number {
   font-family: "Playfair Display", serif;
