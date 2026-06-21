@@ -373,8 +373,8 @@ main {
 
 .about-collage {
   grid-column: 1 / -1;
-  max-width: 640px;
-  width: min(640px, 88%);
+  max-width: 900px;
+  width: 100%;
   margin: 0 auto;
   border: 1px solid var(--pink-200);
   border-radius: var(--radius-lg);
@@ -383,16 +383,16 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 0;
 }
 
 .about-collage img {
   display: block;
-  width: auto;
-  max-width: 100%;
+  width: 100%;
+  max-width: none;
   height: auto;
-  max-height: 340px;
-  object-fit: contain;
+  max-height: none;
+  object-fit: cover;
   margin: 0 auto;
 }
 
