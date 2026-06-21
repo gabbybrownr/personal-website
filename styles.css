@@ -1160,6 +1160,10 @@ li {
     grid-template-columns: 1fr;
   }
 
+  .services-copy {
+    order: -1;
+  }
+
   .services-image-wrap {
     min-height: 260px;
     max-height: 340px;
