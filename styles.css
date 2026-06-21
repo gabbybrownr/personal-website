@@ -373,8 +373,8 @@ main {
 
 .about-collage {
   grid-column: 1 / -1;
-  max-width: 900px;
-  width: 100%;
+  max-width: 560px;
+  width: min(560px, 70%);
   margin: 0 auto;
   border: 1px solid var(--pink-200);
   border-radius: var(--radius-lg);
@@ -391,7 +391,7 @@ main {
   width: 100%;
   max-width: none;
   height: auto;
-  max-height: none;
+  max-height: 320px;
   object-fit: cover;
   margin: 0 auto;
 }

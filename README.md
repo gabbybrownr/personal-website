@@ -68,7 +68,7 @@ Edit text directly in `index.html` to update:
 ## File Structure
 
 ```
-personal-website/
+mediakit/
 ├── index.html      # Main HTML structure
 ├── styles.css      # All styling and animations
 ├── script.js       # Interactive features
