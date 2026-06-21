@@ -371,6 +371,23 @@ main {
   justify-self: center;
 }
 
+.about-collage {
+  grid-column: 1 / -1;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid var(--pink-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.84);
+}
+
+.about-collage img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .hero-about .card-label {
   margin-bottom: 10px;
 }
