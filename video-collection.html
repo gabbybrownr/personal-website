@@ -194,20 +194,19 @@
         ]
       },
       "product-stories": {
-        kicker: "Product Stories",
-        title: "Top 10 Product Story Videos",
-        desc: "Highest-view product-focused stories and recommendations.",
+        kicker: "Product Photography",
+        title: "Product Photography",
+        desc: "",
         videos: [
-          { id: "7504461138743119135", views: 638600, label: "LaceMade, SHEIN & TEMU product picks" },
-          { id: "7505909339182353695", views: 115900, label: "Birthday event products and accessories" },
-          { id: "7643968802933198111", views: 26200, label: "SHEIN summer product selection" },
-          { id: "7621332280509828383", views: 24700, label: "Spring dresses product showcase" },
-          { id: "7649133498279791903", views: 13400, label: "Birthday gift product haul" },
-          { id: "7646958464853396767", views: 12700, label: "Vacation dress product edit" },
-          { id: "7650283305430011166", views: 12600, label: "SHEIN feminine product review" },
-          { id: "7651787353052187918", views: 12500, label: "Pink top product styling" },
-          { id: "7644321950008970527", views: 10400, label: "GlowMode activewear story" },
-          { id: "7644378509011340574", views: 8800, label: "PinkBlush dress product story" }
+          { image: "images/product/bolso.jpg" },
+          { image: "images/product/bolsos-tamanos.jpg" },
+          { image: "images/product/colonia.jpg" },
+          { image: "images/product/disney.jpg" },
+          { image: "images/product/jewelry-portada.jpg" },
+          { image: "images/product/libretas.jpg" },
+          { image: "images/product/makeup.jpg" },
+          { image: "images/product/neckless.jpg" },
+          { image: "images/product/peluche.jpg" }
         ]
       }
     };
@@ -251,7 +250,7 @@
           </div>
           <a class="video-link" href="${url}" target="_blank" rel="noopener">Open on TikTok</a>
         `;
-      } else {
+      } else if (video.url) {
         const featuredTag = video.featured ? " ⭐" : "";
         card.innerHTML = `
           <p class="video-meta">${video.label}${featuredTag}</p>
@@ -259,6 +258,19 @@
             TikTok reference link
           </div>
           <a class="video-link" href="${video.url}" target="_blank" rel="noopener">Open on TikTok</a>
+        `;
+      } else if (video.image) {
+        card.innerHTML = `
+          <div class="video-frame-wrap">
+            <img
+              class="video-frame"
+              src="${video.image}"
+              alt="Product photography"
+              loading="lazy"
+              decoding="async"
+              style="object-fit: cover;"
+            >
+          </div>
         `;
       }
 
