@@ -781,9 +781,23 @@ li {
 
 .partnership-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(12px, 1.8vw, 20px);
-  align-items: stretch;
+  grid-template-columns: minmax(260px, 0.95fr) minmax(420px, 1.45fr);
+  gap: clamp(16px, 2.4vw, 30px);
+  align-items: center;
+}
+
+.partnership-grid > p {
+  margin: 0;
+  font-size: clamp(1.1rem, 1.4vw, 1.55rem);
+  line-height: 1.42;
+}
+
+.partnership-brand-image {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+  border: 1px solid var(--pink-200);
+  box-shadow: 0 12px 28px rgba(194, 98, 140, 0.14);
 }
 
 .partnership-card {
@@ -1117,6 +1131,8 @@ li {
 
   .partnership-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+    align-items: start;
   }
 
   .partnership-cta .coq-btn {
